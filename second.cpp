@@ -7,17 +7,15 @@ void spacing ()
 
 int welcomeMsg ()
 {
-    std::cout << "[1] - Patient" << std::endl;
+    std::cout << "[1] - Patient Login" << std::endl;
     std::cout << "[2] - Create Patient" << std::endl;
-    std::cout << "[3] - Doctor" << std::endl;
-    std::cout << "[4] - Admin" << std::endl;
+    std::cout << "[3] - Doctor Login" << std::endl;
+    std::cout << "[4] - Clear Data" << std::endl;
     std::cout << "[5] - Exit Program" << std::endl;
     int userInput;
     std::cin >> userInput;
     return userInput;
 }
-
-
 
 // vars
 std::string first_name;
@@ -27,6 +25,7 @@ float height;
 float weight;
 std::string phone_num;
 std::string e_mail;
+std::string input_first;
 
 // func for gathering info
 template <typename A>

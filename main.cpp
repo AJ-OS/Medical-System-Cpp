@@ -1,7 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 #include <vector>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 #include "second.hpp"
 
 /*
@@ -11,13 +14,40 @@ Output: ./main
 
 int main ()
 {
+    std::string saved_user;
+    std::ifstream classFile("Medical-Data.csv");
+    std::string line;
+    std::ofstream File;
     switch (welcomeMsg())
     {
         // patient 
         case 1: 
         spacing (); 
         std::cout << "Patient Selected." << std::endl; 
-        spacing (); 
+        spacing ();  
+        
+        std::cout << "Enter your First Name: " << std::endl;
+        std::cin >> input_first; 
+
+        bool valueFile; 
+            // refer to stack - https://stackoverflow.com/questions/19936483/c-reading-csv-file?rq=3
+            while (std::getline(classFile, line)) 
+            {
+                // finish later
+                return 0;
+            }
+        
+
+        if (valueFile == true)
+        {
+            std::cout << "Information Found!" << std::endl; 
+        } 
+        else 
+        {
+            std::cout << "Error finding Info." << std::endl;
+            return 0;
+        }
+        
         break;
 
         // Create a User
@@ -39,7 +69,9 @@ int main ()
             info << "First Name" << "," << "Last Name" << "," << "Age" << "," << "Height (M)" << "," << "Weight (lbs)" << "," << "Phone Number" << "," << "Email" << std::endl;
             }
                 //set given info
-            info << first_name << "," << last_name << "," << age << "," << height << "," << weight << "," << phone_num << "," << e_mail <<  std::endl;
+            info << first_name << "," << last_name << "," << age << "," << height << "," << weight << "," << phone_num << "," << e_mail << std::endl;
+            
+            std::cout << "Profile Created Successfully!" << std::endl; 
 
             info.close();
         }
@@ -60,8 +92,13 @@ int main ()
         // admin
         case 4:
         spacing (); 
-        std::cout << "Admin Selected." << std::endl; 
+        std::cout << "Clearing Data!" << std::endl; 
+        File.open("Medical-Data.csv", std::ios::trunc);
+        File.close();
+
         spacing (); 
+        
+
         break;
 
         // exit
@@ -69,6 +106,7 @@ int main ()
         spacing (); 
         std::cout << "Closing Program!" << std::endl; 
         spacing (); 
+
         return 0;
         break;
 

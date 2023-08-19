@@ -8,6 +8,8 @@ int welcomeMsg ();
 
 void spacing (); 
 
+void randomKey (); 
+
 // temp func
 template <typename A>
 A get_user_input(const std::string &prompt);
@@ -22,6 +24,6 @@ extern float height;
 extern float weight;
 extern std::string phone_num;
 extern std::string e_mail;
-
+extern std::string input_first; 
 
 #endif
