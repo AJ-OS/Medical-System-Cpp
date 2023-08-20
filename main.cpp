@@ -74,22 +74,7 @@ int main ()
             double bmi = weightKg / std::pow(heightMeter, 2);
             std::cout << "BMI: " << bmi << std::endl;
             std::cout << "BMI Info: ";  
-            if (bmi < 18.5)
-            {
-                std::cout << "Under Weight" << std::endl;
-            } 
-            else if (bmi > 18.5 & bmi < 24.9)
-            {  
-                std::cout << "Healthy Weight" << std::endl;
-            } 
-            else if (bmi > 25 & bmi < 29.9)
-            {
-                std::cout << "Overweight" << std::endl;
-            }
-            else if (bmi > 30)
-            {
-                std::cout << "Obese" << std::endl; 
-            }
+            bmiCheck ();
             spacing ();
         } 
 

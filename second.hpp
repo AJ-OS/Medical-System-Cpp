@@ -12,7 +12,7 @@ void randomKey ();
 
 bool gatherUserData();
 
-void bmiCalc(); 
+void bmiCheck (); 
 
 // temp func
 template <typename A>
@@ -29,5 +29,6 @@ extern std::string e_mail;
 extern std::string input_first; 
 extern std::string line;
 extern std::string input_last; 
+extern double bmi;
 
 #endif
