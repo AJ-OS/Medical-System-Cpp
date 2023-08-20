@@ -13,7 +13,7 @@ Output: ./main
 add more secuitry for login (check lastname and age)
 be able to change data once login
 throw errors when missing info 
-complete so i can began rewriting/coping as GUI
+complete so I can began rewriting/coping as GUI
 */
 
 int main ()
