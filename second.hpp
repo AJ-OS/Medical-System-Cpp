@@ -10,11 +10,13 @@ void spacing ();
 
 void randomKey (); 
 
+bool gatherUserData();
+
+void bmiCalc(); 
+
 // temp func
 template <typename A>
 A get_user_input(const std::string &prompt);
-
-bool gatherUserData();
 
 // External Vars
 extern std::string first_name;
@@ -25,5 +27,7 @@ extern float weight;
 extern std::string phone_num;
 extern std::string e_mail;
 extern std::string input_first; 
+extern std::string line;
+extern std::string input_last; 
 
 #endif
