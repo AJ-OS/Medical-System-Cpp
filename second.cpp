@@ -10,6 +10,7 @@ std::string e_mail;
 std::string input_first;
 std::string line;
 std::string input_last; 
+double bmi;
 
 void spacing ()
 {
@@ -53,4 +54,24 @@ void bmiCalc()
     double bmi;
     bmi = weight / (height * height);
     std::cout << bmi << std::endl; 
+}
+
+void bmiCheck ()
+{
+            if (bmi < 18.5)
+            {
+                std::cout << "Under Weight" << std::endl;
+            } 
+            else if (bmi > 18.5 & bmi < 24.9)
+            {  
+                std::cout << "Healthy Weight" << std::endl;
+            } 
+            else if (bmi > 25 & bmi < 29.9)
+            {
+                std::cout << "Overweight" << std::endl;
+            }
+            else if (bmi > 30)
+            {
+                std::cout << "Obese" << std::endl; 
+            }
 }

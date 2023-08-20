@@ -13,7 +13,7 @@ Output: ./main
 add more secuitry for login (check lastname and age)
 be able to change data once login
 throw errors when missing info 
-complete so i can began rewriting/coping as GUI
+complete so I can began rewriting/coping as GUI (test)
 */
 
 int main ()
@@ -74,22 +74,7 @@ int main ()
             double bmi = weightKg / std::pow(heightMeter, 2);
             std::cout << "BMI: " << bmi << std::endl;
             std::cout << "BMI Info: ";  
-            if (bmi < 18.5)
-            {
-                std::cout << "Under Weight" << std::endl;
-            } 
-            else if (bmi > 18.5 & bmi < 24.9)
-            {  
-                std::cout << "Healthy Weight" << std::endl;
-            } 
-            else if (bmi > 25 & bmi < 29.9)
-            {
-                std::cout << "Overweight" << std::endl;
-            }
-            else if (bmi > 30)
-            {
-                std::cout << "Obese" << std::endl; 
-            }
+            bmiCheck ();
             spacing ();
         } 
 
