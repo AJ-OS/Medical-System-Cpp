@@ -9,13 +9,6 @@ Compile: g++ main.cpp second.cpp -o main
 Output: ./main
 */
 
-/* Notes
-add more secuitry for login (check lastname and age)
-be able to change data once login
-throw errors when missing info 
-complete so I can began rewriting/coping as GUI (test)
-*/
-
 int main ()
 {
     bool found_first = false;
