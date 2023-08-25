@@ -14,7 +14,7 @@ bool gatherUserData();
 
 void bmiCheck (); 
 
-// temp func
+// temp function
 template <typename A>
 A get_user_input(const std::string &prompt);
 
@@ -30,5 +30,9 @@ extern std::string input_first;
 extern std::string line;
 extern std::string input_last; 
 extern double bmi;
+extern std::string saved_first;
+extern std::string saved_last; 
+extern bool found_first = false;
+extern bool found_second = false;
 
 #endif
