@@ -38,17 +38,21 @@ int main ()
         if (saved_first == input_first)
         {
             found_first = true;
+            std::getline(ss, saved_last, ',');
             break;
         } 
     }
 
     if (found_first == true)
     {
+        medFile.close();
+        medFile.open("Medical-Data.csv");
         std::cout << "Enter your Last Name: " << std::endl;
         std::cin >> input_last;   
             while (std::getline(medFile, line))
             {
                 std::istringstream ss(line);
+                std::getline(ss, saved_first, ',');
                 std::getline(ss, saved_last, ','); 
 
                 if (saved_last == input_last)
