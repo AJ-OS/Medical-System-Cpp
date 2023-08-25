@@ -112,7 +112,7 @@ int main ()
         else 
         {   
 
-            // write headers & checks for previous header 
+            // write headers & checks for previous headers
             std::ifstream data("Medical-Data.csv");
             if (data.peek() == EOF)
             { 
