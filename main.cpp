@@ -12,8 +12,10 @@ Output: ./main
 int main ()
 {
     bool found_first = false;
+    bool found_second = false;
     char comma; 
     std::string saved_first;
+    std::string saved_last; 
     std::ifstream medFile("Medical-Data.csv");
     std::ofstream File;
 
@@ -36,9 +38,32 @@ int main ()
         if (saved_first == input_first)
         {
             found_first = true;
+            break;
         } 
+    }
 
-        if (found_first == true)
+    if (found_first == true)
+    {
+        std::cout << "Enter your Last Name: " << std::endl;
+        std::cin >> input_last;   
+            while (std::getline(medFile, line))
+            {
+                std::istringstream ss(line);
+                std::getline(ss, saved_last, ','); 
+
+                if (saved_last == input_last)
+                {      
+                    found_second = true;
+                    break;
+                }    
+            }
+    } 
+    else 
+    {
+        std::cout << "Login Error!" << std::endl;
+    }
+
+        if (found_first == true && found_second == true)
         {
             std::istringstream ss(line);
             std::string first_name, last_name, age, height, weight, phone_num, e_mail;
@@ -71,7 +96,6 @@ int main ()
             spacing ();
         } 
 
-    }
         break;
 
         // Create a User (saves data to .csv)
@@ -86,53 +110,52 @@ int main ()
             std::cout << "Error!" << std::endl;
         } 
         else 
-        {
+        {   
+
             // write headers & checks for previous header 
-            if (info.tellp() == 0) 
+            std::ifstream data("Medical-Data.csv");
+            if (data.peek() == EOF)
             { 
-                // set headers
             info << "First Name" << "," << "Last Name" << "," << "Age" << "," << "Height (M)" << "," << "Weight (lbs)" << "," << "Phone Number" << "," << "Email" << std::endl;
-            }
-                //set given info
+            } 
+
+            //set given info
             info << first_name << "," << last_name << "," << age << "," << height << "," << weight << "," << phone_num << "," << e_mail << std::endl;
             
             std::cout << "Profile Created Successfully!" << std::endl; 
 
             info.close();
         }
-    } else {
-        // error
-        std::cout << "Error! No Info" << std::endl;
-    } 
-        spacing (); 
-        break;
+        } 
+        else 
+        {
+            // error
+            std::cout << "Error! No Info" << std::endl;
+        } 
+            spacing (); 
+            break;
 
         // admin (clear data)
         case 3:
-        spacing (); 
-        std::cout << "Clearing Data!" << std::endl; 
-        File.open("Medical-Data.csv", std::ios::trunc);
-        File.close();
-
-        spacing (); 
-        
-
-        break;
+            spacing (); 
+            std::cout << "Clearing Data!" << std::endl; 
+            File.open("Medical-Data.csv", std::ios::trunc);
+            File.close();
+            spacing (); 
+            break;
 
         // exit
         case 4:
-        spacing (); 
-        std::cout << "Closing Program!" << std::endl; 
-        spacing (); 
+            spacing (); 
+            std::cout << "Closing Program!" << std::endl; 
+            spacing (); 
 
-        return 0;
-        break;
+            return 0;
+            break;
 
         default: 
-        std::cout << "Invalid Input" << std::endl; 
-        return 0;
+            std::cout << "Invalid Input" << std::endl; 
+            return 0;
     }
-
     return 0;
-
 }
