@@ -1,4 +1,5 @@
 #include "second.hpp"
+
 // vars
 std::string first_name;
 std::string last_name;
@@ -11,6 +12,10 @@ std::string input_first;
 std::string line;
 std::string input_last; 
 double bmi;
+std::string saved_first;
+std::string saved_last; 
+bool found_first = false;
+bool found_second = false;
 
 void spacing ()
 {
@@ -28,7 +33,7 @@ int welcomeMsg ()
     return userInput;
 }
 
-// func for gathering info
+// function for gathering info
 template <typename A>
 A get_user_input(const std::string &prompt) {
     A input;
@@ -58,20 +63,20 @@ void bmiCalc()
 
 void bmiCheck ()
 {
-            if (bmi < 18.5)
-            {
-                std::cout << "Under Weight" << std::endl;
-            } 
-            else if (bmi > 18.5 & bmi < 24.9)
-            {  
-                std::cout << "Healthy Weight" << std::endl;
-            } 
-            else if (bmi > 25 & bmi < 29.9)
-            {
-                std::cout << "Overweight" << std::endl;
-            }
-            else if (bmi > 30)
-            {
-                std::cout << "Obese" << std::endl; 
-            }
+    if (bmi < 18.5)
+    {
+        std::cout << "Under Weight" << std::endl;
+    } 
+    else if (bmi > 18.5 & bmi < 24.9)
+    {  
+        std::cout << "Healthy Weight" << std::endl;
+    } 
+    else if (bmi > 25 & bmi < 29.9)
+    {
+        std::cout << "Overweight" << std::endl;
+    }
+    else if (bmi > 30)
+    {
+        std::cout << "Obese" << std::endl; 
+    }
 }
