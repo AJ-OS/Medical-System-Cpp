@@ -1,4 +1,4 @@
-![C++] (https://img.shields.io/badge/C++-8A2BE2)
+![C++](https://img.shields.io/badge/C++-8A2BE2)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 # Medical-System (C++ Terminal)
 
